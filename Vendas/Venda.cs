@@ -2,10 +2,18 @@ using System;
 using System.Collections.Generic;
 using Cantina.Produtos;
 
-namespace Cantina.Vendas{
-    public class Venda{
+namespace Cantina.Vendas
+{
+    public class Venda
+    {
         public Ticket Ticket { get; set; }
-        public double Total { get; set; }
+        private DateTime _data = new DateTime();
+        public DateTime Data 
+        { 
+            get {return _data;} 
+            private set{_data = value;} }
+        
+        public double Total { get; private set; }
         public bool Cancelada { get; private set; }
         public bool Finalizada { get; private set; }
         public bool Entrega { get; private set; }
@@ -32,6 +40,7 @@ namespace Cantina.Vendas{
             Cancelada = false;
             Finalizada = false;
             Entrega = false;
+            Data = DateTime.Now;
 
             Ticket = ticket;
 

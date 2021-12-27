@@ -21,6 +21,13 @@ namespace Cantina.Produtos
             this.Descontos();
         }
 
+        public Ticket (List<Produto> quentinhas){
+            _produtos = quentinhas;
+
+            this.SomaProdutos();
+            this.Descontos();
+        }
+
         private void SomaProdutos(){
             double somaVal = 0;
 
@@ -36,7 +43,7 @@ namespace Cantina.Produtos
         private void Descontos(){
             int somaQuant = 0;
 
-            foreach (Produto prod in _produtos)
+            foreach (Quentinha prod in _produtos)
             {
                 somaQuant += prod.Quantidade;
             }

@@ -1,6 +1,6 @@
 namespace Cantina.Produtos
 {
-    public class Produto
+    public abstract class Produto
     {
         public string Nome { get; private set; }
         public double Valor { get; private set; }
