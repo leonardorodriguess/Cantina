@@ -6,12 +6,12 @@ using Cantina.Vendas;
 namespace Cantina.Clientes
 {
     public class Compra{
-        private Menu _menu = new Menu();
-        public Menu Menu
+        //private Menu _menu = new Menu();
+        /*public Menu Menu
         {
             get{return _menu;} 
             set{_menu = value;}
-        }
+        }*/
         public Ticket Ticket { get; private set; }
         public Venda Venda { get; set; }
         public bool _confirmado;
@@ -45,21 +45,21 @@ namespace Cantina.Clientes
             if (Cantina.AbrirCantina)
             {
                 if(!_confirmado){
-                    Console.WriteLine("Cantina Aberta");
+                    // Console.WriteLine("Cantina Aberta");
                     SelecionarQuantidade(indice, quantidade);
-                    _produtos.Add(_menu.ItemQuentinha[indice]);
+                    _produtos.Add(Menu.ItemQuentinha[indice]);
                 }else{
                     Console.WriteLine("Após confirmado para adicionar mais ítens é necessário fazer uma nova Compra");
                 }
             }else
             {
-                Console.WriteLine("Cantina Fechada não é possível comprar");
+                Console.WriteLine("Cantina Fechada não é possível comprar ");
             }            
         }
 
         public void SelecionarQuantidade(int indice, int quantidade)
         {
-            _menu.ItemQuentinha[indice].Quantidade = quantidade;
+            Menu.ItemQuentinha[indice].Quantidade = quantidade;
         }
     }
 

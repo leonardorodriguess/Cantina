@@ -1,3 +1,4 @@
+using System;
 using Cantina.Produtos;
 
 namespace Cantina{
@@ -10,6 +11,8 @@ namespace Cantina{
             Nome = nome;
             Endereco = endereco;
             AbrirCantina = true;
+
+            Console.WriteLine("Cantina Aberta \n");
         }
 
 
